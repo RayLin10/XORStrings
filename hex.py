@@ -16,6 +16,11 @@ output = ""
 
 for index, letter in enumerate(inp):
     value = ord(letter) ^ ord(key[index % keyLength])
-    output += chr(value)
+    if mode == "numOut":
+        hexValue = hex(value)
+        hexValue = hexValue[2:]
+        output += hexValue + " "
+    else:
+        output += chr(value)
 
 print(output)
